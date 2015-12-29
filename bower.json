@@ -1,0 +1,22 @@
+{
+  "name": "safeRoad",
+  "authors": [
+    "Maftouh <maftouh.hassane@gmail.com>"
+  ],
+  "description": "La securité routiere est une affaire de tous. Roulons moins roulons mieux",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "angularjs#~1.4.8",
+    "bootstrap": "~3.3.6"
+  }
+}
