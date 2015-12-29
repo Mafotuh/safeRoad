@@ -1,23 +1,18 @@
 /*GULP Job file 
 ***************************************
  * Automate processing for :
- *- Converting SASS to CSS and JS
- *- Minifiying
- *- joining files*/
+ *- Converting SASS to CSS
+ *- Minifiying */
 //=====================================
 
 // Standanrd Dependance
 var gulp = require('gulp'),
-	watch = require('gulp-watch'),
-	rename = require('gulp-rename'),
-
-	// CSS Dependancies
 	sass = require('gulp-sass'),
+	rename = require('gulp-rename'),
 	minifycss = require('gulp-minify-css'),
-	
-	// JS Dependancies
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify');
+	watch = require('gulp-watch'),
 
 // Testing Task 
 gulp.task('test', function(){
@@ -26,17 +21,12 @@ gulp.task('test', function(){
 
 // Definning CSS Taskes
 gulp.task('style', function(){
-	return gulp.src('sass/style.scss')
+	return gulp.src('public/sass/style.scss')
 	.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-
 	.pipe(gulp.dest('public/css/'))
-	// .pipe(gulp.dest('dist/css/'))
-
 	.pipe(rename({suffix: '.min'}))
 	.pipe(minifycss())
-
 	.pipe(gulp.dest('public/css/'))
-	// .pipe(gulp.dest('dist/css/'));
 });
 
 // Definning JS Taskes
