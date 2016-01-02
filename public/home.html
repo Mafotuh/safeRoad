@@ -1,0 +1,42 @@
+<section ng-controller="connexionCtrl as connect">
+	<h3>Es-tu en état de condure ? </h3>
+	<p>Connecté sous {{connect.userData.displayName}} <br> Connect-toi pour passer le test ! (Déjà personnes ont répndu)</p>
+	
+	<!-- Tout ce qui doit etre affiché lorsque l'utilisateur sera connecté -->
+	<div ng-show="connect.userData">
+		<!-- Affichage du tableau du score -->
+		<p><a href="#/score">Voire la table des scores</a></p>
+		<!-- Bouton de deconnexion  -->
+		<input type="button" class="btn btn-danger" value="Deconnexion" ng-click="connect.signOut()">
+	
+		<h3>Es-tu en état de condure ?</h3>
+		<p>Tu sort d'une soiré un peu arrosée et c'est le moment de prendre la voiture. Mais,  tu n'est pas sure de savoir si tu es en état de condure ?</p>
+		<p>Ne t'inquiete pas ! cette application va t'aider à determiner si tu as les idées claire et un cerveau suffidsamment reactif, en te proposant de repondre à une serie des questions.</p>
+		<p>En résumé : <span>TU REPONDS AU QUESTION ET ON TE DIT SI TU ES BOURREE !</span></p>
+		<p>Attention ! Cette application web s'inscrit dans un cadre de pure divertssement, et ne constitue en aucun cas une autorisation officielle de prendre la route, et ce quelque soit le resultat.</p>
+		<p>Le conducteur reste le seul responsable en cas d'accident lié à la consommation abusif d'alcool.</p>
+
+		<div ng-controller="valitationCtrl as valitat">
+			<form id="testStartForm" ng-submit="valitat.commanceparti()">
+				<p>
+					<label for="validMention">j'ai bien compris que ce test n'est pas officiel et que je suis le seul garant de ma santé</label>
+					<input type="checkbox" id="validMention" ng-model="valitat.accepted" required>
+					<input type="submit" id="testStart" value="lancer le test">
+				</p>
+			</form>
+		</div>
+	</div>
+	
+	<!-- Tout ce qui doit disparaitre lorsque l'utilisateur sera connecté -->
+	<div ng-hide="connect.userData">
+	<button id="connectGoogle" ng-click="connect.signWithGoogle()">
+		Connexion avec Google
+	</button>
+	</div>
+</section>
+		
+<!-- <form class="form-inline" ng-submit="connect.addMessage()">
+	<input type="text" class="form-control" placeholder="Votre message ici ..." ng-model="connect.messageText">
+	<input type="text" class="form-control" placeholder="un autre message" ng-model="connect.messageText2">
+	<input type="submit" class="btn btn-default" value="Go">
+</form> -->

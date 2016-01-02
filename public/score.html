@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-	<section>
-		<h3>Tabealu des scores</h3>
-		<table>
-			<tr>
-				<td>Utilisateur</td>
-				<td>Score</td>
-			</tr>
-		</table>
-	</section>
-</body>
-</html>
+<section ng-controller="connexionCtrl as connect">
+	<h3>Tabealu des scores</h3>
+	<table>
+		<tr ng-repeat="message in connect.messages track by $index">
+			<td>{{message.from}}&nbsp;</td>
+			<td>{{message.msg}}&nbsp;</td>
+			<td>{{message.msg2}}&nbsp;</td>
+		</tr>
+	</table>
+	<p><a href="#/">Retour à la case depart</a></p>
+</section>
