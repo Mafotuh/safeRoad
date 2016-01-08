@@ -33,5 +33,5 @@ gulp.task('style', function(){
 
 // watch All changes on CSS
 gulp.task('watch', function(){
-	gulp.watch('sass/*.scss', ['style']);
+	gulp.watch('public/sass/*.scss', ['style']);
 })
