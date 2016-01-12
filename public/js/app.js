@@ -1,19 +1,14 @@
 var app = angular.module('safeRoad', ['ui.router', 'firebase']);
 
+// Configuration des routting 
 app.config(function($stateProvider, $urlRouterProvider){
 	
 	$stateProvider
 	.state('home', {
 		url: '/',
 		templateUrl: 'home.html',
-		controller: 'homeCtrl', 
-		controllerAs: 'home'
-	})
-	.state('intro', {
-		url: '/intro',
-		templateUrl: 'intro.html',
-		controller: 'introCtrl', 
-		controllerAs: 'intro'
+		controller: 'connexionCtrl', 
+		controllerAs: 'connect'
 	})
 	.state('quiz', {
 		url: '/quiz',

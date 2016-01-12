@@ -1,19 +1,24 @@
-<style>	span{display: block;} </style>
-<section>
-	<form action="#">
-		<p>Question #1 : if you turn out a left glove, it feet the left hand or the right hand </p>
-		<span>
-			<input type="radio" id="reponse1" name="reponse">
-			<label for="reponse1">The left hand</label>
-		</span>
-		<span>
-			<input type="radio" id="reponse2" name="reponse">
-			<label for="reponse2">The Rith hand</label>
-		</span>
-		<span>
-			<input type="radio" id="reponse3" name="reponse">
-			<label for="reponse3">both</label>
-		</span>
-		<input type="submit" value="Envoyer" ng-submit="">
-	</form>
+<section id="quiz" ng-controller="quizCtrl as quiz">
+
+<form id="questionId" ng-submit="quiz.sauvegardeResultat()">
+
+	<div ng-repeat="name in questionencours" id="questionaire">
+		<p>{{name.question}}</p>
+		<ol>
+			<li><label for="reponse1">
+				<input type="radio" name="reponse" id="reponse1" ng-model="$scope.reponse"> 
+				{{name.reponses.pro1}}</label>
+			</li>
+			<li><label for="reponse2">
+				<input type="radio" name="reponse" id="reponse2" ng-model="$scope.reponse"> 
+				{{name.reponses.pro2}}</label>
+			</li>
+			<li><label for="reponse3">
+				<input type="radio" name="reponse" id="reponse3" ng-model="$scope.reponse"> 
+				{{name.reponses.pro3}}</label>
+			</li>
+		</ol>
+	</div>
+	<input type="submit" value="Suivant">
+</form>
 </section>
